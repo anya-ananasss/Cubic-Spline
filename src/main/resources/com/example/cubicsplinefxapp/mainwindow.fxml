@@ -3,7 +3,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.canvas.Canvas?>
 
+<?import javafx.scene.control.Button?>
 <AnchorPane fx:id="anchorPane" xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.cubicsplinefxapp.CubicSplineController">
     <Canvas fx:id="canvas" width="800" height="600" AnchorPane.topAnchor="30.0"/>
+    <Button fx:id="clearCanvasButton"
+            onAction="#onClearCanvasButtonClick" prefHeight="34.0"
+            text="Clear canvas"/>
+    <Button fx:id="closeWindowButton"
+            onAction="#onCloseWindowButtonClick" prefHeight="34.0"
+            text="Close window" AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0"/>
 </AnchorPane>

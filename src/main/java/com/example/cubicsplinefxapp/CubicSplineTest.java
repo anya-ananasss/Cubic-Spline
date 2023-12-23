@@ -65,7 +65,7 @@ public class CubicSplineTest {
 
         int[][] expected = new int[][]{ {2, 3, 1},
                 {1, 0, 0},
-                {0, -1, 0}, //TODO: посчитать ручками c и соответственно d, у мужика cn!=0 ///с4=0???
+                {0, -1, 0},
                 {0, 0, 0}};
 
 
@@ -75,7 +75,7 @@ public class CubicSplineTest {
         double[][] shuttleMatrix;
         shuttleMatrix = cubicSpline.initShuttleMatrix();
 
-        List [] auxList = cubicSpline.getSplineCoeffs(xList, yList, shuttleMatrix);
+        List <Double> [] auxList = cubicSpline.getSplineCoeffs(xList, yList, shuttleMatrix);
 
 
         for (int y = 0; y < auxList.length; y++) {

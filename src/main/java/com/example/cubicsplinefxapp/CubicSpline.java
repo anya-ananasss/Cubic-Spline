@@ -11,16 +11,17 @@ public class CubicSpline {
         this.yList = new ArrayList<>();
     }
 
+    public CubicSpline(List<Double> argsList, List<Double> funcList) {
+        this.xList = argsList;
+        this.yList = funcList;
+    }
+
     public void setxList(List<Double> xList) {
         this.xList = xList;
     }
 
     public void setyList(List<Double> yList) {
         this.yList = yList;
-    }
-
-    public int getPointsAmount() {
-        return this.xList.size();
     }
 
     public List<Double> getxList() {
@@ -31,7 +32,6 @@ public class CubicSpline {
         return yList;
     }
 
-    //TODO: какое условие сильнее - для 1й или для н-1 строчки? пока пробую через 1е условие
     public double[][] initShuttleMatrix() {
         List<Double> x = this.xList;
         List<Double> y = this.yList;
@@ -99,7 +99,7 @@ public class CubicSpline {
 
 
     protected List<Double> findBetas(double[][] matrix) {
-        int n = 0;//TODO: переименовать n
+        int n = 0;
         double a, d;
         a = matrix[0][0];
         d = matrix[0][matrix[0].length - 1];
@@ -131,7 +131,7 @@ public class CubicSpline {
     private double[] coeffsForShuttleMatrix(double x1, double x2, double x3,
                                             double y1, double y2, double y3) { //1=i; 2=i+1; 3=i+2
         double Ac = 2 * (x3 - x1);
-        double Bc = x3 - x2;//выпадает в последней строке
+        double Bc = x3 - x2;//нет в последней строке
         double Cc = x2 - x1;
         double Dc = 3 * ((y3 - y2) / (x3 - x2) - (y2 - y1) / (x2 - x1));
 
