@@ -1,5 +1,6 @@
 package com.example.cubicsplinefxapp;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;
@@ -58,6 +59,7 @@ public class CubicSplineController {
             }
         });
     }
+
 
     private void handlePrimaryClick(GraphicsContext graphicsContext, MouseEvent event) {
         final Point2D clickPoint = new Point2D(event.getX(), event.getY());
